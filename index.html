@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Website</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles/general.css" />
+    <link rel="stylesheet" href="src/styles/navigation.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
+    <script type="module" src="/src/js/controller.js"></script>
+  </head>
+  <body class="body">
+    <div class="bg hidden"></div>
+    <header class="header">
+      <nav class="top-nav">
+        <ul class="top-nav-list">
+          <li>
+            <a href=""><img src="/src/img/logo.png" alt="" class="logo" /></a>
+          </li>
+          <li>
+            <form class="search">
+              <input
+                type="text"
+                class="search-field"
+                placeholder="Search recipes..."
+              />
+              <svg class="icon-search">
+                <use href="/src/img/icons.svg#icon-search"></use>
+              </svg>
+              <button class="search-field-btn" type="submit"></button>
+            </form>
+          </li>
+          <li><button class="btn btn-add-recipe">Add Recipe</button></li>
+        </ul>
+      </nav>
+      <div>
+        <h1 class="heading-primary">Explore Recipes</h1>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <nav class="recipe-nav">
+          <ul class="recipe-nav-list">
+            <li>
+              <button class="btn-recipe-nav btn-active">All</button>
+            </li>
+            <li><button class="btn-recipe-nav">Pizza</button></li>
+            <li>
+              <button class="btn-recipe-nav">Burgers</button>
+            </li>
+            <li><button class="btn-recipe-nav">Pasta</button></li>
+            <li><button class="btn-recipe-nav">Sushi</button></li>
+            <li><button class="btn-recipe-nav">Bookmarks</button></li>
+          </ul>
+        </nav>
+        <p class="recipe-message">
+          You have <span class="recipe-number">0</span> recipes to explore...
+        </p>
+        <div class="recipe-container"></div>
+        <nav class="pagination-nav" data-currentpage="1">
+          <ul class="pagination-nav-list">
+            <li>
+              <button class="btn-pagination previous">
+                <svg class="icon-arrow">
+                  <use href="/src/img/icons.svg#icon-arrow-left"></use>
+                </svg>
+              </button>
+            </li>
+            <li><p class="page-number">1</p></li>
+            <li>
+              <button class="btn-pagination next">
+                <svg class="icon-arrow">
+                  <use href="/src/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <footer class="footer">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Help & Feedback</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="social-nav">
+        <ul class="social-nav-list">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/logan-m-b3774a140/"
+            >
+              <svg class="icon-linkedin">
+                <use href="/src/img/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/logan.mceldowney.3/"
+            >
+              <svg class="icon-facebook">
+                <use href="/src/img/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/loganmceldowney">
+              <svg class="icon-github">
+                <use href="/src/img/icons.svg#icon-github"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright">
+          Copyright © <span class="year">2023</span> by Logan McEldowney. All
+          rights reserved.
+        </p>
+      </nav>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+:root {
+  --grey-background: #e9ecef;
+  --grey-text-color: #adb5bd;
+  --grey-lightest: #dee2e6;
+  --grey-light: #ced4da;
+
+  --white: #f8f9fa;
+  --white-shade: #f0f0f0;
+
+  --accent-main: #d6336c;
+  --accent-darker: #c2255c;
+  --accent-lighter: #e64980;
+  --accent-main-shade: #c12e61;
+
+  --bold-color: #212529;
+  --bold-color-lighter: #343a40;
+  --bold-color-lightest: #495057;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--grey-background);
+  color: var(--grey-text-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.6;
+  letter-spacing: 0.4px;
+}
+
+main {
+  border-bottom: 1px solid var(--grey-light);
+}
+
+header {
+  background-image: url(/src/img/food-banner.jpg);
+  background-position: 0% 80%;
+  background-size: cover;
+  padding: 3.6rem;
+  border-bottom: 1px solid var(--grey-light);
+  margin-bottom: 3.6rem;
+}
+
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1280px;
+  margin: 2.4rem auto;
+}
+
+::placeholder {
+  color: var(--grey-text-color);
+}
+
+.logo {
+  display: none;
+  width: 5.2rem;
+}
+
+.heading-primary {
+  text-align: center;
+  margin-top: 4.8rem;
+  margin-bottom: 2.4rem;
+  color: var(--bold-color);
+  font-weight: 800;
+}
+
+.btn {
+  padding: 0.8rem 2.4rem;
+  background-color: var(--white);
+  color: var(--grey-text-color);
+  font-size: 0.7rem;
+  border-radius: 10rem;
+  border: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.search-field-btn {
+  display: none;
+}
+
+.modal-open {
+  pointer-events: none;
+}
+
+.error {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  text-transform: none;
+  gap: 1.2rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-error {
+  height: 2.4rem;
+  width: 2.4rem;
+  fill: var(--accent-main);
+}
