@@ -441,7 +441,9 @@ const loadOverlay = function () {
 
       // Attach click event listeners to the buttons
       btns[0].addEventListener("click", openModal);
-      btns[1].addEventListener("click", addBookmark);
+      btns[1].addEventListener("click", function () {
+        addBookmark(btns[1]);
+      });
 
       // Remove the "hidden" class from all buttons inside the overlay
       Array.from(overlay.children[0].children).forEach((btn) => {
@@ -463,8 +465,12 @@ const loadOverlay = function () {
  * Fetches recipe details, creates a bookmark, and adds it to the bookmarks array.
  * Handles the case where the bookmark already exists in the array.
  */
-const addBookmark = async function () {
+const addBookmark = async function (btn) {
   try {
+    btn.classList.add("animate");
+    setTimeout(() => {
+      btn.classList.remove("animate");
+    }, 600);
     // Fetch recipe details from the Forkify API using the recipeID
     const res = await fetch(
       `https://forkify-api.herokuapp.com/api/v2/recipes/${recipeID}`
