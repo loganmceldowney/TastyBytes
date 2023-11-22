@@ -1,5 +1,5 @@
 
-https://mapty-loganmceldowney.netlify.app/](https://tastybytes-loganmceldowney.netlify.app/
+https://tastybytes-loganmceldowney.netlify.app/
 # **TastyBytes**
 This application was created in order to demonstrate skills with JavaScript classes. In addition to this, it demonstrates abilities in creating, updating, and deleting data within an application.
 
