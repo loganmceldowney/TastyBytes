@@ -62,6 +62,10 @@
     font-size: 65%;
   }
 
+  .modal-ingredient-list {
+    max-height: 35px;
+  }
+
   .recipe {
     height: 200px;
     width: 95%;
