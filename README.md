@@ -1,65 +1,26 @@
-
 https://tastybytes-loganmceldowney.netlify.app/
 # **TastyBytes**
-This application was created in order to demonstrate skills with JavaScript classes. In addition to this, it demonstrates abilities in creating, updating, and deleting data within an application.
+This application was created to demonstrate advanced skills with JavaScript, focusing on asynchronous JavaScript through API calls to the Forkify API.
 
 ![alt text](https://github.com/loganmceldowney/TastyBytes/blob/master/tastybytes-fullimage.png)
 
 ## **Project Purpose & Goal**
-Mapty is a demonstration of my proficiency in JavaScript, HTML, and CSS. The primary goal of this project was to create a workout logging application, enhancing my JavaScript skills and exploring its diverse functionalities. The application's key feature is the ability to log recent workouts on a map, thanks to the integration of the Leaflet library.
+TastyBytes is more than just a recipe browsing website; it's a testament to my advanced proficiency in front-end development, specifically showcasing my ability to harness the power of asynchronous JavaScript. The primary goal of this project is to provide users with not only a user-friendly interface for discovering and saving recipes but also to introduce them to the dynamic world of real-time updates and seamless browsing experiences.
 
 ## **Technologies Used**
-For this project, I harnessed the power of **JavaScript**, **HTML**, and **CSS**. I acquired these skills through active participation in a comprehensive Udemy course that focused on JavaScript, particularly emphasizing the use of JavaScript classes. Additionally, I integrated geolocation to enable users to log their workouts with precise location data from their current location. This application stands as one of my most complex creations to date, providing me with an exciting opportunity to delve into the depths of JavaScript and its capabilities.
+The foundation of TastyBytes is built upon the trio of JavaScript, HTML, and CSS. Leveraging the Forkify API, users can access a rich database of recipes and relevant information. The integration of API calls goes beyond the basics, demonstrating my expertise in handling asynchronous operations for real-time updates and a truly seamless browsing experience.
 
 ## **Design & Thought Process**
-The creation of Mapty hinged on crafting a user-friendly interface that seamlessly empowered users to explore its functionality. It was primarily designed as a platform for mastering JavaScript classes and the various ways they can be manipulated.
+The design philosophy behind TastyBytes revolves around delivering an intuitive and visually appealing platform for users to explore the vast world of culinary delights. HTML and CSS were meticulously crafted to ensure a responsive, engaging, and aesthetically pleasing user interface. JavaScript takes center stage in managing dynamic content updates, ensuring that the user experience is not just smooth but also interactive.
 
-The journey began with the development of the user interface, thoughtfully designed using HTML and CSS. Subsequently, the application's mapping functionality was introduced through the integration of the Leaflet library, ensuring a smooth and intuitive user experience. However, the heart of the application lies in its JavaScript code.
-
-Initially, my online course guided me in creating simple functionality. But as the project evolved, I expanded its capabilities. Users can now edit and delete their previously entered workouts, and they receive clear error and success messages to enhance their understanding of the process.
-
-Mapty is not just a testament to my skills but a functional tool for users to log and manage their workouts effectively.
+The integration of the Forkify API adds a layer of complexity, allowing users not only to search for recipes and view details but also to save their favorites. The application's design is purposefully crafted to make recipe discovery an enjoyable and efficient process, incorporating advanced features that go beyond basic recipe browsing.
 
 
 ## **Things I Learned**
-* JavaScript Classes
-* Class Inheritance
-* Geolocation
-* Advanced DOM Manipulation
-* Intergration of External Libraries
-* Dynamic HTML Creation
-* Data Management
-* Error Handling / Feedback
-* Using Local Storage
-)https://mapty-loganmceldowney.netlify.app/
-# **Mapty**
-This application was created in order to demonstrate skills with JavaScript classes. In addition to this, it demonstrates abilities in creating, updating, and deleting data within an application.
-
-![alt text](https://github.com/loganmceldowney/Mapty/blob/main/mapty-application-full.png)
-
-## **Project Purpose & Goal**
-Mapty is a demonstration of my proficiency in JavaScript, HTML, and CSS. The primary goal of this project was to create a workout logging application, enhancing my JavaScript skills and exploring its diverse functionalities. The application's key feature is the ability to log recent workouts on a map, thanks to the integration of the Leaflet library.
-
-## **Technologies Used**
-For this project, I harnessed the power of **JavaScript**, **HTML**, and **CSS**. I acquired these skills through active participation in a comprehensive Udemy course that focused on JavaScript, particularly emphasizing the use of JavaScript classes. Additionally, I integrated geolocation to enable users to log their workouts with precise location data from their current location. This application stands as one of my most complex creations to date, providing me with an exciting opportunity to delve into the depths of JavaScript and its capabilities.
-
-## **Design & Thought Process**
-The creation of Mapty hinged on crafting a user-friendly interface that seamlessly empowered users to explore its functionality. It was primarily designed as a platform for mastering JavaScript classes and the various ways they can be manipulated.
-
-The journey began with the development of the user interface, thoughtfully designed using HTML and CSS. Subsequently, the application's mapping functionality was introduced through the integration of the Leaflet library, ensuring a smooth and intuitive user experience. However, the heart of the application lies in its JavaScript code.
-
-Initially, my online course guided me in creating simple functionality. But as the project evolved, I expanded its capabilities. Users can now edit and delete their previously entered workouts, and they receive clear error and success messages to enhance their understanding of the process.
-
-Mapty is not just a testament to my skills but a functional tool for users to log and manage their workouts effectively.
-
-
-## **Things I Learned**
-* JavaScript Classes
-* Class Inheritance
-* Geolocation
-* Advanced DOM Manipulation
-* Intergration of External Libraries
-* Dynamic HTML Creation
-* Data Management
-* Error Handling / Feedback
-* Using Local Storage
+* Advanced JavaScript Concepts
+* Asynchronous JavaScript Techniques (API Calls)
+* Pagination for Efficient Data Presentation
+* Robust Data Handling Strategies
+* Seamless Integration of External APIs
+* Dynamic HTML Creation for an Interactive UI
+* Effective Error Handling and User Feedback Mechanisms
