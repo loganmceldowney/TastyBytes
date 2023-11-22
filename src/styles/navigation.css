@@ -47,8 +47,8 @@
   justify-content: center;
 }
 
-.btn-add-recipe,
 .btn-bookmarks {
+  grid-column: 4;
   position: relative;
   color: var(--accent-lighter);
   border: 1px solid var(--grey-light);
