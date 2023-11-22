@@ -1,7 +1,6 @@
 /*************************/
 /* BELOW 1344px (Smaller Desktops) */
 /*************************/
-
 @media (max-width: 84em) {
   .footer {
     max-width: 60rem;
@@ -32,9 +31,11 @@
     margin-bottom: 2.4rem;
     gap: 1.2rem;
   }
+
   .footer {
     max-width: 50rem;
   }
+
   .top-nav-list {
     display: flex;
     flex-direction: column;
@@ -66,16 +67,8 @@
     max-height: 35px;
   }
 
-  .recipe {
-    height: 200px;
-    width: 95%;
-  }
-
-  .recipe-entire {
-    height: 200px;
-    width: 95%;
-  }
-
+  .recipe,
+  .recipe-entire,
   .recipe-overlay {
     height: 200px;
     width: 95%;
@@ -84,6 +77,7 @@
   .recipe-nav {
     border-radius: 6px;
   }
+
   .recipe-nav-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -92,6 +86,7 @@
   .footer {
     max-width: 30rem;
   }
+
   .footer-nav-list {
     margin: 0 auto;
     display: grid;

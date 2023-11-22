@@ -1,3 +1,4 @@
+/* COLORS */
 :root {
   --grey-background: #e9ecef;
   --grey-text-color: #adb5bd;
@@ -17,15 +18,14 @@
   --bold-color-lightest: #495057;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ------------------------ */
 /* GENERAL STYLES */
-/* ------------------------ */
 body {
   position: relative;
   font-family: "Poppins", sans-serif;
