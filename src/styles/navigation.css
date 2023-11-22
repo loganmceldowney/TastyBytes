@@ -49,6 +49,7 @@
 
 .btn-add-recipe,
 .btn-bookmarks {
+  position: relative;
   color: var(--accent-lighter);
   border: 1px solid var(--grey-light);
 }

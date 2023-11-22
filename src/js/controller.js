@@ -13,6 +13,7 @@ const pageNum = document.querySelector(".page-number");
 const previousBtn = document.querySelector(".previous");
 const nextBtn = document.querySelector(".next");
 const background = document.querySelector(".bg");
+const bookmarkBtn = document.querySelector(".btn-bookmarks");
 
 let recipeID;
 let recipeArray = [];
@@ -82,25 +83,23 @@ const recipeSearch = async function (query) {
       recipeArray.push(createRecipe(rec));
     });
     totalPages = Math.ceil(recipeArray.length / RES_PER_PAGE);
+    console.log(totalPages);
 
     getTotalRecipes(recipeArray);
 
-    if (query === `${ALL_RECIPES}`) {
-      // recipeArray = randomizeArray(recipeArray);
-    }
-
     clearContainer(recipeContainer);
     if (totalPages === 0) {
-      console.log(recipeContainer);
       renderError(
         recipeContainer,
         "Could not find any recipes, please try again!"
       );
+      nextBtn.style.display = "none";
+    } else {
+      nextBtn.style.display = "block";
     }
-
     showRecipes(recipeArray);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -114,16 +113,19 @@ const showRecipes = function (array) {
     recipeContainer.insertAdjacentHTML("afterbegin", generateMarkup(rec));
   });
   loadOverlay();
-  if (totalPages < 1) {
-    nextBtn.style.display = "none";
-  }
 };
 
 const resetPaginationBtns = function () {
   paginationButtonContainer.dataset.currentpage = 1;
   pageNum.textContent = paginationButtonContainer.dataset.currentpage;
   previousBtn.style.display = "none";
-  nextBtn.style.display = "block";
+
+  console.log(`${totalPages}: total pages`);
+  if (totalPages <= 1) {
+    nextBtn.style.display = "none";
+  } else {
+    nextBtn.style.display = "block";
+  }
 };
 
 const getCurrentPage = function () {
@@ -171,22 +173,6 @@ recipeButtonContainer.addEventListener("click", function (e) {
   if (btn.textContent === "All") {
     query = `${ALL_RECIPES}`;
     recipeSearch(query);
-  } else if (btn.textContent === "Bookmarks") {
-    totalPages = Math.ceil(bookmarksArray.length / RES_PER_PAGE);
-    console.log(bookmarksArray);
-    if (bookmarksArray.length === 0) {
-      clearContainer(recipeContainer);
-      renderError(
-        recipeContainer,
-        "No bookmarks yet. Find a nice recipe and bookmark it!"
-      );
-      getTotalRecipes(bookmarksArray);
-    } else {
-      console.log(totalPages);
-      clearContainer(recipeContainer);
-      getTotalRecipes(bookmarksArray);
-      showRecipes(bookmarksArray);
-    }
   } else {
     query = btn.textContent;
     recipeSearch(query);
@@ -215,7 +201,53 @@ searchField.addEventListener("submit", function (e) {
 });
 
 const getTotalRecipes = function (array) {
-  recipeNumber.textContent = array.length.toLocaleString();
+  const newArray = array.map(Object.values);
+  recipeNumber.textContent = newArray.length.toLocaleString();
+};
+
+const bookmarksContainer = document.querySelector(".bookmarks");
+const bookmarkList = document.querySelector(".bookmarks-list");
+bookmarkBtn.addEventListener("click", function () {
+  bookmarkList.innerHTML = "";
+  if (bookmarksContainer.style.visibility === "visible")
+    bookmarksContainer.style.visibility = "hidden";
+  else {
+    bookmarksContainer.style.visibility = "visible";
+    renderBookmarks();
+  }
+});
+
+const renderBookmarks = function () {
+  bookmarksArray.forEach((bookmark) => {
+    const markup = `
+    <li class="bookmark-item" data-id="${bookmark.id}">
+                  <img
+                    class="bookmark-image"
+                    src="${bookmark.imageUrl}"
+                    alt="${bookmark.title}"
+                  />
+                  <h3 class="bookmark-title">${bookmark.title}</h3>
+                  <svg class="icon-trash">
+                  <use href="${icons}#icon-trash"></use></svg
+                >
+                </li>`;
+    bookmarkList.insertAdjacentHTML("afterbegin", markup);
+  });
+  const allBookmarks = Array.from(document.querySelectorAll(".bookmark-item"));
+  if (allBookmarks.length === 0) return;
+  allBookmarks.forEach((bookmark) => {
+    bookmark.addEventListener("click", function (e) {
+      recipeID = bookmark.dataset.id;
+      if (e.target.closest(".icon-trash")) {
+        bookmarksArray.splice(
+          bookmarksArray.findIndex((bookmark) => bookmark.id === recipeID),
+          1
+        );
+      } else {
+        openModal();
+      }
+    });
+  });
 };
 
 const loadOverlay = function () {
@@ -246,10 +278,15 @@ const addBookmark = async function () {
       `https://forkify-api.herokuapp.com/api/v2/recipes/${recipeID}`
     );
     const { data } = await res.json();
-    const recipe = createRecipe(data.recipe);
-    recipe.bookmark = true;
-    console.log(recipe);
-    bookmarksArray.push(recipe);
+    const recipe = data.recipe;
+    const newRecipe = createRecipe(recipe);
+    newRecipe.bookmark = true;
+    const isObjectUnique = bookmarksArray.every(
+      (item) => JSON.stringify(item) !== JSON.stringify(newRecipe)
+    );
+    if (isObjectUnique) {
+      bookmarksArray.push(newRecipe);
+    }
   } catch (err) {
     console.error(err);
   }
@@ -280,7 +317,7 @@ const openModal = async function () {
       closeModal(modal);
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -318,6 +355,14 @@ const generateModalMarkup = function (recipe) {
       }" target="_blank">Directions</a>
     </div>
   `;
+};
+
+window.onclick = (event) => {
+  if (!event.target.matches(".btn-bookmarks")) {
+    if (bookmarksContainer.style.visibility === "visible") {
+      bookmarksContainer.style.visibility = "hidden";
+    }
+  }
 };
 
 const generateMarkupIngredient = function (ing) {
