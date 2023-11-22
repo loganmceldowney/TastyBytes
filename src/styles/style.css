@@ -18,7 +18,6 @@
   width: 100%;
   border-radius: 10rem;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 .search-field:focus {
@@ -34,6 +33,7 @@
   border: none;
   color: var(--grey-lightest);
   border: 2px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 .icon-search {
