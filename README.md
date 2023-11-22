@@ -24,3 +24,4 @@ The integration of the Forkify API adds a layer of complexity, allowing users no
 * Seamless Integration of External APIs
 * Dynamic HTML Creation for an Interactive UI
 * Effective Error Handling and User Feedback Mechanisms
+* Use of Parcel and NPM Packages
