@@ -366,7 +366,7 @@ const renderBookmarks = function () {
   if (bookmarksArray.length === 0) {
     // Display a message if there are no bookmarks
     const markup = `
-      <li class="bookmark-item" ">
+      <li class="bookmark-item">
         <svg class="icon-clock">
           <use href="${icons}#icon-alert-triangle"></use>
         </svg>
@@ -387,6 +387,9 @@ const renderBookmarks = function () {
           <div class="bookmark-div">
             <h3 class="bookmark-title">${bookmark.title}</h3>
             <p class="bookmark-publisher">${bookmark.publisher}</p>
+            <svg class="icon-trash">
+              <use href="${icons}#icon-trash"></use>
+            </svg>
           </div>
         </li>`;
 
@@ -410,10 +413,12 @@ const renderBookmarks = function () {
       // Check if the click was on the trash icon
       if (e.target.closest(".icon-trash")) {
         // Remove the bookmark from the bookmarksArray
-        bookmarksArray.splice(
-          bookmarksArray.findIndex((bookmark) => bookmark.id === recipeID),
-          1
+        bookmarksArray = bookmarksArray.filter(
+          (bookmark) => bookmark.id !== recipeID
         );
+
+        // Re-render the bookmarks list
+        renderBookmarks();
       } else {
         // Open the modal for the clicked bookmark
         openModal();
